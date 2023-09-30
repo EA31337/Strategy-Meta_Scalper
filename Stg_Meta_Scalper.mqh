@@ -9,7 +9,7 @@
 
 // User input params.
 INPUT2_GROUP("Meta Scalper strategy: main params");
-INPUT2 ENUM_STRATEGY Meta_Scalper_Strategy = STRAT_CCI;  // Scalper strategy
+INPUT2 ENUM_STRATEGY Meta_Scalper_Strategy = STRAT_OSCILLATOR_TREND;  // Scalper strategy
 INPUT2_GROUP("Meta Scalper strategy: common params");
 INPUT2 float Meta_Scalper_LotSize = 0;                // Lot size
 INPUT2 int Meta_Scalper_SignalOpenMethod = 0;         // Signal open method
@@ -26,7 +26,7 @@ INPUT2 int Meta_Scalper_TickFilterMethod = 10;        // Tick filter method (0-2
 INPUT2 float Meta_Scalper_MaxSpread = 3.0;            // Max spread to trade (in pips)
 INPUT2 short Meta_Scalper_Shift = 0;                  // Shift
 INPUT2 float Meta_Scalper_OrderCloseLoss = 20;        // Order close loss
-INPUT2 float Meta_Scalper_OrderCloseProfit = 10;       // Order close profit
+INPUT2 float Meta_Scalper_OrderCloseProfit = 10;      // Order close profit
 INPUT2 int Meta_Scalper_OrderCloseTime = -10;         // Order close time in mins (>0) or bars (<0)
 
 // Structs.
