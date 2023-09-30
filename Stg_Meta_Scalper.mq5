@@ -1,6 +1,6 @@
 /**
  * @file
- * Implements Oscillator meta strategy.
+ * Implements Scalper meta strategy.
  */
 
 // Includes conditional compilation directives.
@@ -26,19 +26,19 @@
 #endif
 
 // Inputs.
-input int Active_Tfs = M15B + M30B + H1B + H2B + H3B + H4B + H6B +
-                       H8B;               // Timeframes (M1=1,M2=2,M5=16,M15=256,M30=1024,H1=2048,H2=4096,H3,H4,H6,H8)
+input int Active_Tfs = M1B + M2B + M3B + M4B + M5B + M6B + M10B + M12B +
+                       M15B;              // Timeframes (M1=1,M2=2,M5=16,M15=256,M30=1024,H1=2048,H2=4096,H3,H4,H6,H8)
 input ENUM_LOG_LEVEL Log_Level = V_INFO;  // Log level.
 input bool Info_On_Chart = true;          // Display info on chart.
 
 // Includes strategy class.
-#include "Stg_Meta_Oscillator.mqh"
+#include "Stg_Meta_Scalper.mqh"
 
 // Defines.
-#define ea_name "Strategy Meta Oscillator"
+#define ea_name "Strategy Meta Scalper"
 #define ea_version "2.000"
-#define ea_desc "Oscillator meta strategy to filter out signals of other strategies based on the current oscillator."
-#define ea_link "https://github.com/EA31337/Strategy-Meta_Oscillator"
+#define ea_desc "Scalper meta strategy to process signals focusing on scalping."
+#define ea_link "https://github.com/EA31337/Strategy-Meta_Scalper"
 #define ea_author "EA31337 Ltd"
 
 // Properties.
@@ -64,7 +64,7 @@ int OnInit() {
   bool _result = true;
   EAParams ea_params(__FILE__, Log_Level);
   ea = new EA(ea_params);
-  _result &= ea.StrategyAdd<Stg_Meta_Oscillator>(Active_Tfs);
+  _result &= ea.StrategyAdd<Stg_Meta_Scalper>(Active_Tfs);
   return (_result ? INIT_SUCCEEDED : INIT_FAILED);
 }
 
